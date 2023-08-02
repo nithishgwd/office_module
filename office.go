@@ -32,6 +32,11 @@ func (o *Office) GetTeamNames() []string {
 	return names
 }
 
+// GetAllTeams returns a map of all team names to team instances in the office.
+func (o *Office) GetAllTeams() map[string]*team.Team {
+	return o.teams
+}
+
 // UpdateEmployeesTodayForTeam updates the number of employees present today for a particular team.
 func (o *Office) UpdateEmployeesTodayForTeam(teamName string, numEmployees int) {
 	team, found := o.teams[teamName]
